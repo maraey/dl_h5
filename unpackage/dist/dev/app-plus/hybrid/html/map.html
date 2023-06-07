@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3UH0JgEw3ISpBXWvYUKW1ADDEJEsymKY&callback=initMap&libraries=&v=weekly"
+			defer>
+		</script>
+		<script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js">
+		</script>
+		<style type="text/css">
+			#map {
+				height: 100%;
+				width: 100%;
+			}
+
+			html,
+			body {
+				position: relative;
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+			input[type=text] {
+				background-color: #fff;
+				border: 0;
+				border-radius: 2px;
+				box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+				margin: 10px;
+				padding: 0 0.5em;
+				font: 400 18px Roboto, Arial, sans-serif;
+				overflow: hidden;
+				line-height: 40px;
+				margin-right: 0;
+				min-width: 25%;
+			}
+
+			input[type=button] {
+				background-color: #fff;
+				border: 0;
+				border-radius: 2px;
+				box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+				margin: 10px 5px;
+				padding: 0 0.5em;
+				font: 400 18px Roboto, Arial, sans-serif;
+				overflow: hidden;
+				height: 40px;
+				cursor: pointer;
+				margin-left: 5px;
+			}
+
+			input[type=button].button-secondary {
+				position: absolute !important;
+				left: 0 !important;
+				top: 50px !important;
+				background-color: white;
+				color: #1a73e8;
+			}
+
+			input[type=button].button-secondary:hover {
+				background-color: #d2e3fc;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="map">
+		</div>
+	</body>
+</html>
+<script>
+	var map = null
+	var postInfo = {}
+
+	function initMap() {
+		var centerPoint = {
+			lat: 1.341616,
+			lng: 103.866719,
+		};
+		//新建map
+		map = new google.maps.Map(document.getElementById("map"), {
+			zoom: 16,
+			center: centerPoint,
+			mapTypeControl: false,
+			streetViewControl: false
+		});
+
+		var marker = new google.maps.Marker({
+			position: centerPoint,
+			map: map
+		});
+		let infoWindow = new google.maps.InfoWindow({
+			content: "Click the map to get Lat/Lng and address!",
+			position: centerPoint,
+		});
+
+		infoWindow.open(map);
+		map.addListener("click", (mapsMouseEvent) => {
+			console.log(mapsMouseEvent);
+			// Close the current InfoWindow.
+			infoWindow.close();
+			// Create a new InfoWindow.
+			infoWindow = new google.maps.InfoWindow({
+				position: mapsMouseEvent.latLng,
+			});
+			marker.setMap(null)
+			marker = new google.maps.Marker({
+				position: mapsMouseEvent.latLng.toJSON(),
+				map: map
+			});
+			console.log(mapsMouseEvent.latLng.toJSON());
+			let geocoder = new google.maps.Geocoder();
+			geocoder.geocode({
+				location: mapsMouseEvent.latLng.toJSON()
+			}, (result, status) => {
+				if (status == 'OK') {
+					console.log(result[0]);
+					infoWindow.setContent(
+						result[0].formatted_address
+					);
+					postInfo.address = result[0].formatted_address
+				}
+			})
+			postInfo.postion = mapsMouseEvent.latLng.toJSON()
+
+			infoWindow.open(map);
+		});
+		// 搜索框
+		const inputText = document.createElement("input");
+
+		inputText.type = "text";
+		inputText.placeholder = "Enter a location";
+
+		const submitButton = document.createElement("input");
+
+		submitButton.type = "button";
+		submitButton.value = "Geocode";
+		submitButton.classList.add("button", "button-primary");
+		map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
+		map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
+		submitButton.addEventListener("click", () => {
+			let geocoder = new google.maps.Geocoder();
+			geocoder.geocode({
+				address: inputText.value
+			}, (result, status) => {
+				if (status == 'OK') {
+					map.setCenter(result[0].geometry.location);
+					marker.setMap(null)
+					marker = new google.maps.Marker({
+						position: result[0].geometry.location,
+						map: map
+					});
+					infoWindow.close();
+					// Create a new InfoWindow.
+					infoWindow = new google.maps.InfoWindow({
+						position: result[0].geometry.location,
+					});
+					infoWindow.setContent(
+						result[0].formatted_address
+					);
+					infoWindow.open(map);
+					postInfo.address = result[0].formatted_address
+					postInfo.postion =result[0].geometry.location.toJSON()
+				}
+			})
+		});
+
+		// 选择框
+		const clearButton = document.createElement("input");
+		clearButton.type = "button";
+		clearButton.value = "select this";
+		clearButton.classList.add("button", "button-secondary");
+		map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
+		clearButton.addEventListener("click", () => {
+			if (postInfo.address) {
+				console.log(postInfo);
+				localStorage.setItem('postInfo', JSON.stringify(postInfo))
+				uni.postMessage({
+					data: postInfo
+				});
+				uni.navigateBack()
+			}
+
+
+		});
+	}
+	document.addEventListener('UniAppJSBridgeReady', function() {
+
+		// uni.navigateBack()
+		uni.getEnv(function(res) {
+			console.log('当前环境：' + JSON.stringify(res));
+		});
+	});
+</script>
+

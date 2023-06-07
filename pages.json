@@ -1,0 +1,525 @@
+{
+	"pages": [ 
+		{
+			"path": "pages/index/index",
+			"style": {
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		
+		}, {
+			"path": "pages/addAgency/addAgency",
+			"style": {
+				"navigationBarTitleText": "%add.agency%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/addwithdrawal/addwithdrawal",
+			"style": {
+				"navigationBarTitleText": "%modify-withdrawal-Information%",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/applyWithdrawal/applyWithdrawal",
+			"style": {
+				"navigationBarTitleText": "%withdraw.apply%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/forgetPsw/forgetPsw",
+			"style": {
+				"navigationBarTitleText": "%forget-password%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, 
+		{
+			"path": "pages/order/order",
+			"style": {
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/statistics/statistics",
+			"style": {
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/seller/seller",
+			"style": {
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/mine/mine",
+			"style": {
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/change_lang/change_lang",
+			"style": {
+				"navigationBarTitleText": "%language-switch%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/orderBenefitDetail/orderBenefitDetail",
+			"style": {
+				"navigationBarTitleText": "%income.order%",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/orderBenefit/orderBenefit",
+			"style": {
+				"navigationBarTitleText": "%income.order%",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		}, {
+			"path": "pages/addEmployee/addEmployee",
+			"style": {
+				"navigationBarTitleText": "%add.staff%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/addSellerManager/addSellerManager",
+			"style": {
+				"navigationBarTitleText": "%add.seller-account%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/addSellerVip/addSellerVip",
+			"style": {
+				"navigationBarTitleText": "%add.seller-vip%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/endOrder/endOrder",
+			"style": {
+				"navigationBarTitleText": "%end-order%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/agency/agency",
+			"style": {
+				"navigationBarTitleText": "%agent%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/agencyDetail/agencyDetail",
+			"style": {
+				"navigationBarTitleText": "%agent%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/sellerAccount/sellerAccount",
+			"style": {
+				"navigationBarTitleText": "%seller%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/acountDetail/acountDetail",
+			"style": {
+				"navigationBarTitleText": "%seller-detail%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/sellerVip/sellerVip",
+			"style": {
+				"navigationBarTitleText": "%vip-user%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/checkVip/checkVip",
+			"style": {
+				"navigationBarTitleText": "%vip-detail%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/editShop/editShop",
+			"style": {
+				"navigationBarTitleText": "%edit_store%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/business/business",
+			"style": {
+				"navigationBarTitleText": "%staff%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/businessDetail/businessDetail",
+			"style": {
+				"navigationBarTitleText": "%staff%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/password/password",
+			"style": {
+				"navigationBarTitleText": "%change-password%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/replenish/replenish",
+			"style": {
+				"navigationBarTitleText": "%power-bank-supplement%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/replenishRecord/replenishRecord",
+			"style": {
+				"navigationBarTitleText": "%supplement-records%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/sellerDetail/sellerDetail",
+			"style": {
+				"navigationBarTitleText": "%store-detail%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/depositRecord/depositRecord",
+			"style": {
+				"navigationBarTitleText": "%withdrawals-record%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/batteryDevice/batteryDevice",
+			"style": {
+				"navigationBarTitleText": "%charge.battery%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/orderDetail/orderDetail",
+			"style": {
+				"navigationBarTitleText": "%order-detail%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/batteryDeviceDetail/batteryDeviceDetail",
+			"style": {
+				"navigationBarTitleText": "%slot-management%",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}
+	    ,{
+            "path" : "pages/addSeller/addSeller",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "%add-the-merchant%",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/selectSeller/selectSeller",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "%select-merchant%",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/statisticsSeller/statisticsSeller",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "%data-statistics%",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+            }
+            
+        }
+		,{
+		    "path" : "pages/orderIncome/orderIncome",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "%order-income%",
+		        "enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/selectSellerVip/selectSellerVip",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "%select-vip%",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+            }
+        }
+		,{
+		    "path" : "pages/openMap/openMap",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "%google-maps%",
+		        "enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/webview/webview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/aboutUs/aboutUs",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "%aboutUs%",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/register/register",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/openPrivacy/openPrivacy",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "%privacy-policy%",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+		,{
+            "path" : "pages/bindDevice/bindDevice",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "%bind-device%",
+                "enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/introducer/introducer",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "渠道商",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	// "tabBar": {
+	// 	"color": "#AAAAAA",
+	// 	"selectedColor": "#333333",
+	// 	"borderStyle": "rgba(204,204,204,0.3000)",
+	// 	"backgroundColor": "#FFFFFF",
+	// 	"width":"50",
+	// 	"height": "50",
+	// 	"iconWidth": "30px",
+	// 	"spacing": "3",
+	// 	"fontSize": "12",
+	// 	"midButton": {
+	// 		"iconPath": "static/index.png",
+	// 		"width": "60px",
+	// 		"height": "65px",
+	// 		"iconWidth": "60px"
+	// 	},
+	// 	"list": [{ 
+	// 			"pagePath": "pages/order/order",
+	// 			"iconPath": "static/tab_order.png",
+	// 			"selectedIconPath": "static/tab_order_s.png",
+	// 			"text": "%tabbar.order%"
+	// 		}, 
+	// 		{
+	// 			"pagePath": "pages/index/index",
+	// 			"iconPath": "static/tab_index.png",
+	// 			"selectedIconPath": "static/tab_index_s.png",
+	// 			"text": "%tabbar.index%"
+	// 		},
+			
+	// 		{
+	// 			"pagePath": "pages/seller/seller",
+	// 			"iconPath": "static/tab_seller.png",
+	// 			"selectedIconPath": "static/tab_seller_s.png",
+	// 			"text": "%tabbar.seller%"
+	// 		}, {
+	// 			"pagePath": "pages/mine/mine",
+	// 			"iconPath": "static/tab_my.png",
+	// 			"selectedIconPath": "static/tab_my_s.png",
+	// 			"text": "%tabbar.mine%"
+	// 		}
+	// 	]
+	// },
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "%index.title%",
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#F8F8F8"
+	},
+	"condition" : { 
+		"current": 3, 
+		"list": [
+			{
+				"name": "", 
+				"path": "", 
+				"query": "" 
+			}
+		]
+	}
+}
