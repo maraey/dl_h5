@@ -78,7 +78,7 @@ export default {
 			// tab标题
 			tabList: [
 				{
-					title: this.$t('sellers'),
+					title: '门店',
 					type: 1
 				},
 				{
@@ -114,14 +114,6 @@ export default {
 		this.getList();
 		this.userInfo = getApp().globalData.userInfo;
 		console.log(this.userInfo);
-		if (this.userInfo.role != 'agency') {
-			this.tabList = [
-				{
-					title: this.$t('seller'),
-					type: 1
-				}
-			];
-		}
 		// 获取当前时间
 		const date = new Date()
 		const year = date.getFullYear()
@@ -180,7 +172,7 @@ export default {
 				this.list = res.data;
 			} else if (this.type == 2) {
 				const res = await statBranch({
-					type: 'employee',
+					role: 'bd',
 					keyword: this.keyword,
 					start: this.start,
 					end: this.end
@@ -189,7 +181,7 @@ export default {
 				console.log(this.list);
 			} else {
 				const res = await statBranch({
-					type: 'agency',
+					role: 'agent',
 					keyword: this.keyword,
 					start: this.start,
 					end: this.end

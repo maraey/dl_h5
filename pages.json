@@ -463,6 +463,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/addIntroducer/addIntroducer",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "添加渠道商",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/introducerDetail/introducerDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "渠道商详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	// "tabBar": {
 	// 	"color": "#AAAAAA",

@@ -8,28 +8,19 @@
 				</view>
 				<view class="info">
 					<view class="propotion">
-						<text class="text_box">提成比例</text>
-						<text class="num_box">{{info.brokerage}}%</text>
+						<text class="text_box"></text>
+						<text class="num_box"></text>
 					</view>
 					<text class="delete_text" @click="delUser">{{$t('DEL')}}</text>
 				</view>
 			</view>
 			<view class="agency_detail">
 				<view class="agency_left">
-					<text class="info_title">{{$t('franchise-type')}}</text>
 					<text class="info_title">{{$t('phone-num-for-login')}}</text>
-					<text class="info_title">添加下级代理</text>
-					<text class="info_title">{{$t('pop-up-battery')}}</text>
 					<text class="info_title">{{$t('status')}}</text>
 				</view>
 				<view class="agency_right">
-					<text class="info_text" v-if="info.type==1">{{$t('buy')}}</text>
-					<text class="info_text" v-if="info.type==2">{{$t('investor')}}</text>
 					<text class="info_text">{{info.phone}}</text>
-					<text class="info_text" v-if="info.can_sub==1">{{$t('allow')}}</text>
-					<text class="info_text" v-if="info.can_sub==0">{{$t('not-allowed')}}</text>
-					<text class="info_text" v-if="info.can_popup==1">{{$t('allow')}}</text>
-					<text class="info_text" v-if="info.can_popup==0">{{$t('not-allowed')}}</text>
 					<text class="info_text" v-if="info.status==1">{{$t('normal')}}</text>
 					<text class="info_text" v-if="info.status!=1">{{$t('error')}}</text>
 				</view>
@@ -41,11 +32,7 @@
 				</view> -->
 				<view class="logo_box" @click="editSeller">
 					<image src="../../static/seller_detail_edit.png"></image>
-					<text>{{$t('modify-agent')}}</text>
-				</view>
-				<view class="logo_box" @click="bindDevice">
-					<image src="../../static/seller_detail_bind.png"></image>
-					<text>{{$t('bind-the-device')}}</text>
+					<text>修改渠道商</text>
 				</view>
 			</view>
 		</view>
@@ -77,7 +64,7 @@
 		methods: {
 			editSeller() {
 				uni.navigateTo({
-					url: `/pages/addAgency/addAgency?id=${this.id}&info=${JSON.stringify(this.info)}`
+					url: `/pages/addIntroducer/addIntroducer?id=${this.id}&info=${JSON.stringify(this.info)}`
 				});
 			},
 			async getDetail(){
@@ -193,7 +180,6 @@
 			.agency_left {
 				display: flex;
 				flex-direction: column;
-				height: 290rpx;
 				margin-top: 26rpx;
 				.info_title {
 					margin-left: 30rpx;
@@ -208,7 +194,6 @@
 			.agency_right {
 				display: flex;
 				flex-direction: column;
-				height: 290rpx;
 				margin-top: 26rpx;
 				.info_text{
 					margin-left: 46rpx;

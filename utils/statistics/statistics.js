@@ -1,7 +1,7 @@
 import {request} from '@/utils/request.js'
 export function statSeller(data) {
 	return request({
-		url: 'index/statSeller',
+		url: 'index/statStore',
 		method: 'POST',
 		data
 	})
@@ -9,7 +9,7 @@ export function statSeller(data) {
 
 export function statBranch(data) {
 	return request({
-		url: 'index/statBranch',
+		url: 'index/statSub',
 		method: 'POST',
 		data
 	})

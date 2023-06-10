@@ -1,34 +1,21 @@
 <template>
-	<view class="container">
-		<view class="top">
-			<image src="/static/logo1.png"></image>
-		</view>
-		<view class="info_box">
-			<view class="info_item">
-				<text class="title">{{$t('phone')}}</text>
-				<input type="number" :placeholder="$t('please-enter-phone')" placeholder-class="phcolor" v-model="name"/>
-			</view>
-			<view class="info_item">
-				<text class="title">{{$t('password')}}</text>
-				<view class="password">
-					<input :type="is_show?'text':'password'" :placeholder="$t('please-enter-password')" class="delborder" placeholder-class="phcolor" v-model="password" />
-					<image class="can_pass" v-if="is_show" src="../../static/xianshi.png" @click="handlePass"></image>
-					<image class="can_pass" v-if="!is_show" src="../../static/yincang.png" @click="handlePass"></image>
-				</view>
-			</view>
-		</view>
-		<view class="forget" >
-			<view class="register" @click="toRegister" >
-				<text v-if="is_register=== 1">{{$t('register')}}</text> 
-			</view>
-			<view class="forget_password" @click="toForget">
-				{{$t('forget-password')}}
-			</view>
-		</view>
-		<view class="login" @click="login">
-			{{$t('login')}}
-		</view>
-
+	<view class="login">
+	  <view class="top">
+	    <image class="image" src="../../static/Frame@2x.png"></image>
+	    <view class="text">欢迎使用富立共享代理系统</view>
+	  </view>
+	  <view class="bottom">
+	    <view class="input">
+	      <input type="text" placeholder="请输入手机号" v-model="phone" />
+	    </view>
+	    <view class="input">
+	      <input type="password" placeholder="请输入密码" v-model="password"/>
+	    </view>
+	    <view class="forget">
+	      <!-- <navigator class="forgetPassword" url="/pages/forgetPassword/forgetPassword">忘记密码</navigator> -->
+	    </view>
+	    <view class="loginbtn" @click="login">立即登录</view>
+	  </view>
 	</view>
 </template>
 
@@ -37,7 +24,7 @@
 	export default {
 		data() {
 			return {
-				name:'',
+				phone:'',
 				password:'',
 				lang:'en-us',
 				is_register: 0,
@@ -59,7 +46,7 @@
 		methods: {
 			async login(){
 				const res= await login({
-					phone:this.name,
+					phone:this.phone,
 					password:this.password,
 					lang:this.lang
 				})
@@ -94,111 +81,78 @@
 </script>
 
 <style lang="scss" scoped>
-	.container{
-		.top{
-			position:relative;
-			width: 100vw;
-			height: 276rpx;
-			// background-image: url('/static/login_top.png');
-			// background-repeat: no-repeat;
-			background-size: 750rpx 276rpx;
-			image{
-				position:absolute;
-				width: 230rpx;
-				height: 186rpx;
-				top: 126rpx;
-				left:50%;
-				transform:translateX(-50%);
-			}
-		}
-		.info_box{
-			width: 690rpx;
-			margin:50rpx auto 30rpx;
-			.info_item{
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				width: 690rpx;height: 162rpx;
-				border-bottom: 2rpx solid #F5F5F5;
-				.title{
-					width: 130rpx;
-					height: 40rpx;
-					margin-bottom: 24rpx;
-					font-size: 28rpx;
-					font-weight: 400;
-					color: #333333;
-					line-height: 40rpx;
-				}
-				input{
-					width: 510rpx;
-					font-size: 26rpx;
-					font-weight: 400;
-					color: #333333;
-				}
-				.password{
-					display: flex;
-					justify-content: space-between;
-					.delborder{
-						width: 510rpx;
-						font-size: 26rpx;
-						font-weight: 400;
-						color: #333333;
-						border: none;
-						outline: none;
-					}
-					.can_pass{
-						width: 36rpx;
-						height: 36rpx;
-					}
-				}
+.login {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
 
-			}
-		}
-		.forget{
-			display: flex;
-			justify-content: space-between;
-			padding: 0 30rpx;
-			.register{
-				height: 34rpx;
-				color: #333333;;
-				font-size: 24rpx;
-				font-weight: 400;
-				line-height: 34rpx;
-			}
-			.forget_password{
-				height: 34rpx;
-				color: $global-color;
-				font-size: 24rpx;
-				font-weight: 500;
-				line-height: 34rpx;
-			}
-		}
-		.login{
-			width: 690rpx;
-			height: 88rpx;
-			margin: 30rpx auto;
-			text-align: center;
-			line-height: 88rpx;
-			font-size: 32rpx;
-			font-weight: 500;
-			color: #fff;
-			background-color: $global-color;
-			border-radius: 44rpx;
-		}
-		.about{
-			position: absolute;
-			width: 690rpx;
-			margin: 30rpx auto;
-			text-align: center;
-			bottom: 56rpx;
-			left: 30rpx;
-			text{
-				height: 16rpx;
-				font-size: 22rpx;
-				font-weight: 400;
-				color: #333333;
-				line-height: 16rpx;
-			}
-		}
-	}
+.login .top {
+  display: block;
+  width: 100vw;
+  height: 358rpx;
+  padding: 0 72rpx;
+  background: linear-gradient(109deg, #3D82FF 0%, #47ACFC 95%);
+  box-sizing: border-box;
+}
+
+.login .top image {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 92rpx 0 36rpx;
+}
+
+.login .top .text {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 42rpx;
+}
+
+.login .bottom {
+  display: block;
+  width: 750rpx;
+  /* height: 1110rpx; */
+  padding: 60rpx 72rpx;
+  margin-top: -40rpx;
+  background: #FFFFFF;
+  border-radius: 40rpx 40rpx 0rpx 0rpx;
+  box-sizing: border-box;
+}
+
+.login .bottom .input {
+  display: flex;
+  align-items: center;
+  width: 606rpx;
+  height: 100rpx;
+  padding: 0 40rpx;
+  background: #F0F3F6;
+  border-radius: 72rpx;
+  box-sizing: border-box;
+}
+.login .bottom .input+.input{
+  margin-top: 30rpx;
+}
+.login .bottom .input input{
+  background-color:  #F0F3F6;
+}
+.login .bottom .forget{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10rpx;
+}
+.login .bottom .forget .forgetPassword{
+  color: #666;
+}
+.login .bottom .loginbtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 606rpx;
+  height: 80rpx;
+  margin-top: 20rpx;
+  color: #fff;
+  background: linear-gradient(109deg, #3D82FF 100%, #47ACFC 100%);
+  border-radius: 80rpx;
+}
 </style>

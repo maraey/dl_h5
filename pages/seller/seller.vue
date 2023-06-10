@@ -18,7 +18,7 @@
 				</view>
 			</view>
 		</scroll-view>
-		<image class="add_image" @click="addSeller" src="../../static/add_icon.png" v-if="userInfo.role != 'seller'"></image>
+		<image class="add_image" @click="addSeller" src="../../static/add_seller_btn.png" v-if="userInfo.role != 'seller'"></image>
 		<tabbar selected="seller"></tabbar>
 	</view>
 </template>

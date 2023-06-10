@@ -25,7 +25,7 @@ export function fileUpload(data) {
 }
 export function roleList(data) {
 	return request({
-		url: 'role/selectList',
+		url: 'marketer/index',
 		method: 'POST',
 		data
 	})

@@ -170,58 +170,11 @@
 						</view>
 					</view>
 				</view>
-<!-- 				<view class="add_seller_item">
-					<view class="add_seller_item_title">
-						<text>{{ $t('open-hours') }}</text>
-					</view>
-					<view class="add_seller_item_subtitle">
-						<text>{{$t('workingDay')}}:</text>
-					</view>
-					<view class="picker_time_box">
-						<view class="picker_time">
-							<picker mode="time" :value="working_day.start" @change="bindWorkStart">
-								<view class="picker">{{ working_day.start }}</view>
-							</picker>
-							<view class="line"></view>
-							<picker mode="time" :value="working_day.end" @change="bindWorkEnd">
-								<view class="picker">{{ working_day.end }}</view>
-							</picker>
-						</view>
-					</view>
-					<view class="add_seller_item_subtitle">
-						<text>{{$t('weekend')}}:</text>
-					</view>
-					<view class="picker_time_box">
-						<view class="picker_time">
-							<picker mode="time" :value="weekend.start" @change="bindWeekStart">
-								<view class="picker">{{ weekend.start }}</view>
-							</picker>
-							<view class="line"></view>
-							<picker mode="time" :value="weekend.end" @change="bindWeekEnd">
-								<view class="picker">{{ weekend.end }}</view>
-							</picker>
-						</view>
-					</view>
-					<view class="add_seller_item_subtitle">
-						<text>{{$t('holidays')}}:</text>
-					</view>
-					<view class="picker_time_box">
-						<view class="picker_time">
-							<picker mode="time" :value="holidays.start" @change="bindHolStart">
-								<view class="picker">{{ holidays.start }}</view>
-							</picker>
-							<view class="line"></view>
-							<picker mode="time" :value="holidays.end" @change="bindHolEnd">
-								<view class="picker">{{ holidays.end }}</view>
-							</picker>
-						</view>
-					</view>
-				</view> -->
 				<view class="add_seller_item">
 					<view class="add_seller_item_title">
 						<text>{{ $t('store-picture') }}</text>
 					</view>
-					<view class="add_seller_item_title" style="margin-top: 20rpx;">
+	<!-- 				<view class="add_seller_item_title" style="margin-top: 20rpx;">
 						<radio-group @change="fileType">
 							<label>
 								<radio value="0" :checked="file_type == 0" />
@@ -232,7 +185,7 @@
 								<text>{{ $t('video') }}</text>
 							</label>
 						</radio-group>
-					</view>
+					</view> -->
 					<view class="picker_image_box" @click="uploadImage">
 						<image class="picker_image" v-if="file_type == 0&& !picture_url" src="../../static/add_seller_add_image.png"></image>
 						<image class="picker_image" v-if="file_type == 1&& !video_url" src="../../static/add_seller_add_image.png"></image>
@@ -419,18 +372,6 @@ export default {
 			picture_url: '',
 			file_type: 0,
 			video_url:'',
-			working_day: {
-				start: "",
-				end: ""
-			},
-			weekend: {
-				start: "",
-				end: ""
-			},
-			holidays: {
-				start: "",
-				end: ""
-			},
 			updataAddress:'',
 			updataShop:'',
 			contacts:''
@@ -595,9 +536,6 @@ export default {
 			if (this.seller_id == '') {
 				const res = await addSeller({
 					name: JSON.stringify(this.name),
-					working_day: JSON.stringify(this.working_day),
-					weekend: JSON.stringify(this.weekend),
-					holidays: JSON.stringify(this.holidays),
 					tel: this.tel,
 					contacts: this.contacts,
 					industry: this.multiIndex,
@@ -640,9 +578,6 @@ export default {
 				const res = await editSeller({
 					id: Number(this.seller_id),
 					name: JSON.stringify(this.name),
-					working_day: JSON.stringify(this.working_day),
-					weekend: JSON.stringify(this.weekend),
-					holidays: JSON.stringify(this.holidays),
 					tel: this.tel,
 					contacts: this.contacts,
 					industry: this.multiIndex,
@@ -855,31 +790,6 @@ export default {
 			this.end_time = e.detail.value;
 			console.log(this.end_time);
 		},
-		bindWorkStart(e){
-			this.working_day.start = e.detail.value
-			console.log(this.working_day)
-		},
-		bindWorkEnd(e) {
-			this.working_day.end = e.detail.value
-			console.log(this.working_day)
-		},
-		
-		bindWeekStart(e){
-			this.weekend.start = e.detail.value
-			console.log(this.weekend)
-		},
-		bindWeekEnd(e) {
-			this.weekend.end = e.detail.value
-		},
-		
-		bindHolStart(e){
-			this.holidays.start = e.detail.value
-			console.log(this.holidays)
-		},
-		bindHolEnd(e) {
-			this.holidays.end = e.detail.value
-		},
-		
 		toSelectManager() {
 			uni.navigateTo({
 				url: '/pages/selectSeller/selectSeller'
@@ -911,12 +821,6 @@ export default {
 			console.log(app.globalData.seller)
 			this.name.zh = JSON.parse(res.data.name).zh;
 			this.name.en = JSON.parse(res.data.name).en;
-			this.working_day.start = JSON.parse(res.data.working_day).start;
-			this.working_day.end = JSON.parse(res.data.working_day).end;
-			this.weekend.start = JSON.parse(res.data.weekend).start;
-			this.weekend.end = JSON.parse(res.data.weekend).end;
-			this.holidays.start = JSON.parse(res.data.holidays).start;
-			this.holidays.end = JSON.parse(res.data.holidays).end;
 			if (this.updataShop == '') {
 				this.manager_name = res.data.manager_name;
 				this.manager_id = res.data.manager_id;

@@ -22,7 +22,7 @@
 				</view>
 			</view>
 		</scroll-view>
-		<image class="add_image" src="../../static/add_seller_btn.png" @click="addAgency"></image>
+		<image class="add_image" src="../../static/add_seller_btn.png" @click="addIntroducer"></image>
 	</view>
 </template>
 
@@ -70,12 +70,12 @@
 			},
 			toDetail(id) {
 				uni.navigateTo({
-					url:'../agencyDetail/agencyDetail?id='+id
+					url:'../introducerDetail/introducerDetail?id='+id
 				})
 			},
-			addAgency() {
+			addIntroducer() {
 				uni.navigateTo({
-					url:'../addAgency/addAgency'
+					url:'../addIntroducer/addIntroducer'
 				})
 			},
 			scrolltolower(){
